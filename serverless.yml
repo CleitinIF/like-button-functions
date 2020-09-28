@@ -1,14 +1,38 @@
-service: like-button-serverless
+service: like-button
 frameworkVersion: "2"
 
 provider:
   name: aws
   runtime: nodejs12.x
   region: sa-east-1
-  memorySize: 128
+  memorySize: 512
+  tracing:
+    lambda: true
+  environment:
+    FAUNADB_SECRET: fnAD22vT8RACAhAIbRz7b_FWWyEpTnJkRNTMAxWq
 
 functions:
   likePost:
     handler: likePost.handle
+    events:
+      - http:
+          path: likepost/{id}
+          method: get
+          cors:
+            origins:
+              - http://54.232.66.141
+            headers:
+              - Content-Type
+            allowCredentials: false
   getPost:
     handler: getPost.handle
+    events:
+      - http:
+          path: getpost/{id}
+          method: get
+          cors:
+            origins:
+              - http://54.232.66.141
+            headers:
+              - Content-Type
+            allowCredentials: false
