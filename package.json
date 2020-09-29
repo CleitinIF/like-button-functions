@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "faunadb": "^3.0.1"
+  },
+  "scripts": {
+    "setup-database": "node ./scripts/setup-fauna-database.js"
   }
 }
