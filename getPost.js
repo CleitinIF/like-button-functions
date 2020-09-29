@@ -12,7 +12,7 @@ module.exports.handle = async (event, context) => {
     return {
       statusCode: 400,
       headers: {
-        "Access-Control-Allow-Origin": "http://54.232.66.141",
+        "Access-Control-Allow-Origin": process.env.ORIGIN_ADDRESS,
         "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify({ message: "You need to send the post id in url" }),
@@ -30,7 +30,7 @@ module.exports.handle = async (event, context) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "http://54.232.66.141",
+        "Access-Control-Allow-Origin": process.env.ORIGIN_ADDRESS,
         "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify(response),
@@ -41,7 +41,7 @@ module.exports.handle = async (event, context) => {
     return {
       statusCode: 400,
       headers: {
-        "Access-Control-Allow-Origin": "http://54.232.66.141",
+        "Access-Control-Allow-Origin": process.env.ORIGIN_ADDRESS,
         "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify({ message: "Internal error" }),
