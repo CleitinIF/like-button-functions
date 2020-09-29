@@ -6,6 +6,8 @@
 
     Because I also think in the context of the articles, to be able to store title, description, etc.
 
+  - I was not able to configure the task as auto scaling (not yet)
+
 ## Requirements
 
   - You must have a account in https://dashboard.fauna.com/
