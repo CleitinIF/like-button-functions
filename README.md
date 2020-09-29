@@ -1,5 +1,9 @@
 # Serverless like button
 
+## Live example
+
+http://18.231.192.14/
+
 ## Observations
 
   - Why I choose FaunaDB instead a key-value database to store likes?
