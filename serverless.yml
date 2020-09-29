@@ -5,11 +5,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: sa-east-1
-  memorySize: 512
+  memorySize: 256
   tracing:
     lambda: true
   environment:
-    FAUNADB_SECRET: fnAD22vT8RACAhAIbRz7b_FWWyEpTnJkRNTMAxWq
+    FAUNADB_SECRET: fnAD239djvACE7wQsdil8bdy4vrcggodfreNldCh
+    ORIGIN_ADDRESS: http://18.231.192.14
 
 functions:
   likePost:
@@ -19,8 +20,6 @@ functions:
           path: likepost/{id}
           method: get
           cors:
-            origins:
-              - http://54.232.66.141
             headers:
               - Content-Type
             allowCredentials: false
@@ -31,8 +30,6 @@ functions:
           path: getpost/{id}
           method: get
           cors:
-            origins:
-              - http://54.232.66.141
             headers:
               - Content-Type
             allowCredentials: false
